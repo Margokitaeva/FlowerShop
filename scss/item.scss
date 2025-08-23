@@ -1,0 +1,175 @@
+@import "_variables";
+@import "_base";
+
+.product_info {
+    padding: 100px 0 0 0;
+    .container {
+        background: white;
+        width: 60%;
+        margin: auto;
+        transition: 0.3s;
+
+
+        .items_control {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 50px 0;
+        }
+
+        .item_content {
+            display: flex;
+            flex-direction: column;
+
+            .twoColsContent {
+                display: flex;
+                justify-content: space-between;
+                margin: 0 0 20px 0;
+
+                .left_part {
+                    width: 55%;
+                    .product_image {
+                        //float: left;
+                        width: 100%;
+                        //margin: 0 20px 0 0;
+                    }
+
+                    .item_imgs {
+                        height: 50px;
+
+                        .item_img {
+                            width: 50px;
+                            height: 50px;
+
+                        }
+                    }
+                }
+
+                .right_part {
+                    width: 45%;
+                    padding-left: 20px;
+
+                    .sectionTitle { padding-top: 0; }
+
+
+                    .cost { margin: 0 0 20px 0;}
+
+                    .qty {
+                        border: 2px solid $dark_green;
+                        display: flex;
+                        width: 100px;
+                        //justify-content: ;
+                        gap: 0;
+                        margin: 5px 0 0 0;
+                        //height: 32px;
+
+                        input {
+                            width: 33%;
+                            border: none;
+                            text-align: center;
+                            height: 32px;
+                        }
+
+                        input:hover {
+                            border: none;
+                        }
+
+                        button {
+                            background: white;
+                            color: $text-color;
+                            //font-size: 2em;
+                            padding: 7px 10px 7px 10px;
+                            width: 33%;
+                            height: 32px;
+                            display: inline-flex;
+                            justify-content: center;
+                            align-items: center;
+
+
+
+                            span {
+                                //transform: ;
+                                display: inline-block;
+                                //transform: scale(3) translateY(-1px);
+                                transform-origin: center;
+                                pointer-events: none;
+                            }
+                            //transform-originxxxxxxxxxxxxx: scale(3);
+
+                            //width:44px; height:44px;
+                            //font-size:26px; line-height:1;
+                        }
+
+                        .qty_minus span {
+                            transform: scale(3) translateY(-1px);
+                        }
+
+                        .qty_plus span {
+                            transform: scale(3);
+                        }
+
+
+
+
+                    }
+
+                    a.button_a {
+                        margin: 10px 0 10px 0;
+                        padding: 10px 5% 10px 5%;
+                        width: 100%;
+                        text-align: center;
+                    }
+
+                    .accordions {
+                        .accordion {
+                            button {
+
+
+
+                            }
+                            .accordion_toggle {
+                                background: white;
+                                color: $text_color;
+                                padding: 10px 0 10px 0;
+                                width: 100%;
+                                text-align: left;
+                                display: flex;
+                                align-items: center;
+                                //position: relative;
+                                //justify-content: space-between;
+                                .sign {
+                                    margin-left: auto;
+                                    //padding-left: 3px;
+                                    transform: scale(3);
+                                    //position: absolute;
+                                    //right: 0;                      // всегда у правого края
+                                    //top: 25%;
+                                    //font-size:24px; line-height:1;
+                                }
+                            }
+
+                            .accordion_panel {
+                                p {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+
+            p.description {
+                clear: both;
+            }
+
+
+        }
+
+
+    }
+}
+
+//@media only all and (max-width: 830px) {
+//    .product_info .container { width: 85%; }
+//
+//}

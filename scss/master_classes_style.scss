@@ -1,0 +1,66 @@
+@import '_variables';
+@import '_base';
+
+@import "_master_classes";
+
+.master_classes {
+    padding: 100px 0 0 0;
+    background: transparent;
+
+    .container {
+        width: 60%;
+        transition: 0.3s;
+        //margin: auto;
+
+        p.with_margin {
+            margin: 0 0 25px 50px;
+        }
+
+        p.subtitle::after {
+            margin-top: 20px;
+        }
+
+        .subSectionTitle {
+            font-size: 22px;
+            text-align: center;
+            margin: 30px 0 30px 0;
+        }
+
+        .master_class_div {
+            margin: 50px auto auto;
+            height: 300px;
+            grid-template-columns: 1fr 1fr;
+            //width: 80%;
+
+            .master_class_info {
+                margin: 0 0 0 50px;
+                //text-align: center;
+                align-items: flex-start;
+
+                p {
+                    padding: 5px 0 5px 0;
+                    //font-size: 14px;
+                }
+
+                a.mc_name {
+                    font-size: 18px;
+                    margin: 0 0 10px 0;
+                }
+
+                a.button_a {
+                    margin: 10px 0 0 0;
+                }
+
+                a.button_a:hover {
+                    text-decoration: underline;
+                    background: $dark_green;
+                }
+            }
+        }
+    }
+}
+
+@media only all and (max-width: 800px) {
+    .master_classes .container { width: 85%; }
+
+}

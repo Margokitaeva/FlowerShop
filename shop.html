@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!--    <meta name="viewport" content="width=device-width, height=device-height, target-densitydpi=device-dpi, initial-scale=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--    <link rel="stylesheet" href="./css/style.css" type="text/css">-->
+    <link rel="stylesheet" href="./css/shop_style.css" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title>Магазин</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <div class="header_left">
+                <div class="logo">
+                    <svg viewBox="0 0 31.90909 31.90909" version="1.1" id="svg1" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                        <g id="g5" transform="translate(-61.3636389,-71.3863592)">
+                            <circle class="Background" style="fill:#0a331e;fill-opacity:1;fill-rule:evenodd;stroke-width:0.264583" id="path1" cx="77.318184" cy="87.340904" r="15.954545" />
+                            <g id="g4" transform="matrix(0.89294894,0,0,0.7574949,8.4292301,21.365624)">
+                                <ellipse class="petal" style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.643939;stroke-dasharray:none;stroke-opacity:1" id="path2-5" ry="8.5825109" rx="4.9771986" cy="86.669884" cx="77.916397" transform="matrix(0.99997479,0.00710014,-0.00666787,0.99997777,0,0)" />
+                                <ellipse class="petal" style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.634505;stroke-dasharray:none;stroke-opacity:1" id="path2" ry="8.3250303" rx="4.9819074" cy="42.943268" cx="112.836" transform="rotate(26.567566)" />
+                                <ellipse class="petal" style="fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.663329;stroke-dasharray:none;stroke-opacity:1" id="path2-8" ry="7.2217212" rx="6.2766562" cy="56.139534" cx="76.794029" transform="matrix(0.9033542,0.42889532,0.05606451,0.99842715,0,0)" />
+                            </g>
+                        </g>
+                    </svg>
+
+
+                </div>
+                <a href="index.html" title="На главную">Роза и Маргарита</a>
+            </div>
+            <div class="header_right">
+                <div class="bag_icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"  class="bag">
+                        <path class="bag_body" d="M5 7h14l1.2 12a1 1 0 0 1-1 1H4.8a1 1 0 0 1-1-1L5 7Z" />
+                        <path class="bag_handle" d="M8 7a4 4 0 0 1 8 0" fill="none" stroke-width="2"/>
+                    </svg>
+                </div>
+
+                <div class="menu" aria-label="Открыть меню">
+                    <div class="hamburger">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <!--                    <div class="close" >-->
+                    <!--                        <div></div>-->
+                    <!--                        <div></div>-->
+                    <!--                    </div>-->
+                </div>
+            </div>
+        </header>
+
+        <section class="shop">
+            <div class="container">
+                <p class="subtitle sectionTitle with_margin">Магазин</p>
+                <template id="product_template">
+                    <article class="product">
+                        <img class="product_image" src="" alt="" />
+                        <!--                        <div class="product_description">-->
+                        <p class="product_title textInfo"></p>
+                        <p class="product_price textInfo"></p>
+                        <!--                        </div>-->
+                    </article>
+                </template>
+                <section id="products" class="products"></section>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div id="contacts" class="container">
+                <div class="address_phone">
+                    <p class="subtitle">адрес и телефон</p>
+                    <p class="textInfo">
+                        ул. Арбат, 1а,<br>
+                        Москва, Россия<br>
+                        <a class="textInfo" title="Позвонить">+7 495 000-00-00</a>
+                    </p>
+                </div>
+                <div class="working_hours">
+                    <p class="subtitle">часы работы</p>
+                    <p class="textInfo">
+                        ПН–ПТ: 7:00–20:00<br>
+                        СБ: 8:00–22:00<br>
+                        ВС: 8:00–23:00
+                    </p>
+                </div>
+
+                <div class="news">
+                    <p class="subtitle">свежие новости</p>
+                    <form method="" action="" class="formNews">
+                        <label for="newsEmail" class="textInfo">Подпишитесь на рассылку</label><br>
+                        <input id="newsEmail" type="email" placeholder="Добавьте эл.почту*"  required/>
+                        <button onclick="signForKnews()">ок</button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="copyright">
+                <p class="textInfo">© 2035 РОЗА И МАРГАРИТА. Сайт создан на <a href="https://wix.com">Wix.com</a></p>
+            </div>
+        </footer>
+
+        <div class="overlay" id="menu_overlay" hidden></div>
+
+        <nav class="offcanvas" id="site_menu" aria-hidden="true">
+            <div class="offcanvas_close" id="menu_close" aria-label="Закрыть меню">
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="offcanvas_list">
+                <li><a class="offcanvas_link textInfo" href="index.html" title="Открыть главную страницу">главная</a></li>
+                <li><a class="offcanvas_link textInfo" href="index.html#aboutUs" title="Открыть информацию о нас">о нас</a></li>
+                <li><a class="offcanvas_link textInfo" href="shop.html" title="Открыть магазин" target="_blank">магазин</a></li>
+                <li><a class="offcanvas_link textInfo" href="master_classes.html" title="Открыть страницу о мастер-классах" target="_blank">мастер-классы</a></li>
+                <li><a class="offcanvas_link textInfo" href="#contacts" title="Открыть информацию о адресе и телефоне">адрес и телефон</a></li>
+            </ul>
+        </nav>
+
+
+    </div>
+
+<!--    <div class="shop"-->
+
+
+
+
+    <script type="module" src="./scripts/shop.js" defer></script>
+</body>
+</html>
