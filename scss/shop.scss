@@ -14,12 +14,7 @@
         }
 
         .products {
-            //display: flex;
-            //flex-wrap: wrap;
-            //gap: 45px;
-            //justify-content: center;
-            //transition: 1s;
-            //align-items: flex-start;
+
             // проконтролировать скролл-бар горизонтальный когда картиочке уже некуда уменьшаться
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
