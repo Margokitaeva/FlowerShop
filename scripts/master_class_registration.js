@@ -1,4 +1,4 @@
-import {formatPrice, initMenu} from "./common.js";
+import {formatPrice, initMenu, signForNews} from "./common.js";
 
 initMenu();
 
@@ -32,10 +32,10 @@ const bookingForm= document.getElementById('booking_form');
 const chosenDt   = document.getElementById('chosen_dt');
 const summaryDt  = document.getElementById('summary_dt');
 
-// «Назад»: найдём ссылку (лучше иметь id="back_link" в HTML)
+
 const backLink = document.getElementById('back_link') || document.querySelector('.registration .container a.textInfo');
 
-// Слоты
+
 const SLOT_TEMPLATE = ["10:00","10:30","11:00","11:30","12:30","13:00","13:30","14:00","14:30","15:00"];
 
 // Состояние
@@ -43,11 +43,11 @@ let y, m;
 let selectedDate = null;
 let selectedSlot = null;
 
-/* ===== Умная ссылка «Назад» ===== */
+
 (function setupBackLink(){
     if (!backLink) return;
 
-    // map ?from=... -> страница
+
     function mapFrom(val) {
         if (!val) return null;
         const v = String(val).toLowerCase();
@@ -56,12 +56,12 @@ let selectedSlot = null;
         if (v === 'master' || v === 'classes')            return 'master_classes.html';
         return null;
     }
-    // проверка что реферер с того же origin
+
     function sameOrigin(url) {
         try { return new URL(url, location.href).origin === location.origin; }
         catch { return false; }
     }
-    // угадать по рефереру
+
     function fromReferrer(ref) {
         if (!ref || !sameOrigin(ref)) return null;
         const page = new URL(ref).pathname.split('/').pop().toLowerCase();
@@ -82,11 +82,11 @@ let selectedSlot = null;
 
     backLink.addEventListener('click', (e) => {
         e.preventDefault();
-        location.href = href; // предсказуемее чем history.back()
+        location.href = href;
     });
 })();
 
-/* ===== Старт ===== */
+
 (function init(){
     const now = new Date();
     y = now.getFullYear();
@@ -97,7 +97,6 @@ let selectedSlot = null;
     prevBtn.addEventListener('click', () => { shiftMonth(-1); });
     nextBtn.addEventListener('click', () => { shiftMonth(1);  });
 
-    // Аккордеон «Подробности»
     document.querySelectorAll('.acc__toggle').forEach(btn => {
         const panel = document.getElementById(btn.getAttribute('aria-controls'));
         btn.addEventListener('click', () => {
@@ -107,7 +106,6 @@ let selectedSlot = null;
         });
     });
 
-    // «Дальше» -> показать форму
     btnNext.addEventListener('click', () => {
         bookingForm.hidden = false;
         btnNext.disabled = true;
@@ -115,7 +113,7 @@ let selectedSlot = null;
     });
 })();
 
-/* ===== смена месяца и перерисовка ===== */
+
 function shiftMonth(delta) {
     m += delta;
     if (m < 0)  { m = 11; y--; }
@@ -123,7 +121,7 @@ function shiftMonth(delta) {
     renderCalendar();
 }
 
-/* ===== рисуем сетку дней ===== */
+
 function renderCalendar() {
     calMonthEl.textContent = MONTHS_UI[m];
     calYearEl.textContent  = y;
@@ -134,7 +132,7 @@ function renderCalendar() {
     const first = new Date(y, m, 1);
     const startIdx = (first.getDay() + 6) % 7; // чтобы Пн=0
 
-    // пустые ячейки до 1-го числа
+
     for (let i = 0; i < startIdx; i++) {
         const gap = document.createElement('button');
         gap.type = 'button';
@@ -144,7 +142,6 @@ function renderCalendar() {
         calGrid.appendChild(gap);
     }
 
-    // дни 1..N
     for (let d = 1; d <= daysInMonth; d++) {
         const btn = document.createElement('button');
         btn.type = 'button';
@@ -177,7 +174,6 @@ function renderCalendar() {
     }
 }
 
-/* ===== слоты для выбранной даты ===== */
 function renderSlots() {
     timesList.innerHTML = '';
 
@@ -208,7 +204,6 @@ function renderSlots() {
     });
 }
 
-/* ===== переносим выбранные дату+время вправо и в форму ===== */
 function updateChosenUI() {
     if (!selectedDate || !selectedSlot) return;
 
@@ -220,7 +215,25 @@ function updateChosenUI() {
     summaryDt.textContent = label;
 }
 
-/* ===== утилита: название дня недели (Пн=0) ===== */
 function weekdayRu(d) {
     return WEEKDAYS_RU[(d.getDay() + 6) % 7];
 }
+
+function registerMC(eo) {
+    eo.preventDefault();
+
+    const name = document.getElementById('f_name').value.trim();
+    const lname = document.getElementById('f_lname').value.trim();
+    const email = document.getElementById('f_email').value.trim();
+
+    if (name && lname && email) {
+        alert("Спасибо за регистрацию, " + name + "! Вы успешно записаны на мастер-класс.");
+        eo.target.reset();
+    } else {
+        alert("Пожалуйста, заполните обязательные поля (имя, фамилия, эл. почта).");
+    }
+
+    return false;
+}
+
+window.registerMC = registerMC;

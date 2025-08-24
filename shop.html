@@ -46,7 +46,7 @@
                         </svg>
                     </div>
 
-                    <div class="menu" aria-label="Открыть меню">
+                    <div class="menu">
                         <div class="hamburger">
                             <div></div>
                             <div></div>
@@ -81,39 +81,40 @@
                     <div class="address_phone">
                         <p class="subtitle">адрес и телефон</p>
                         <p class="textInfo">
-                            ул. Арбат, 1а,<br>
-                            Москва, Россия<br>
-                            <a class="textInfo" title="Позвонить">+7 495 000-00-00</a>
+                            ул. Красноармейская, 7а,<br>
+                            Минск, Беларусь<br>
+                            <a class="textInfo" title="Позвонить">+375 29 536 22 24</a>
                         </p>
                     </div>
+
                     <div class="working_hours">
                         <p class="subtitle">часы работы</p>
                         <p class="textInfo">
-                            ПН–ПТ: 7:00–20:00<br>
-                            СБ: 8:00–22:00<br>
-                            ВС: 8:00–23:00
+                            ПН–ПТ: 7:00&ndash;20:00<br>
+                            СБ: 8:00&ndash;22:00<br>
+                            ВС: 8:00&ndash;23:00
                         </p>
                     </div>
 
                     <div class="news">
                         <p class="subtitle">свежие новости</p>
-                        <form method="" action="" class="formNews">
+                        <form method="POST" action="#" class="formNews" onsubmit="return signForNews(event)">
                             <label for="newsEmail" class="textInfo">Подпишитесь на рассылку</label><br>
                             <input id="newsEmail" type="email" placeholder="Добавьте эл.почту*"  required/>
-                            <button onclick="signForKnews()">ок</button>
+                            <button type="submit">ок</button>
                         </form>
                     </div>
 
                 </div>
                 <div class="copyright">
-                    <p class="textInfo">© 2035 РОЗА И МАРГАРИТА. Сайт создан на <a href="https://wix.com">Wix.com</a></p>
+                    <p class="textInfo">&copy; 2035 РОЗА И МАРГАРИТА.</p>
                 </div>
             </footer>
 
             <div class="overlay" id="menu_overlay" hidden></div>
 
-            <nav class="offcanvas" id="site_menu" aria-hidden="true">
-                <div class="offcanvas_close" id="menu_close" aria-label="Закрыть меню">
+            <nav class="offcanvas" id="site_menu">
+                <div class="offcanvas_close" id="menu_close">
                     <div></div>
                     <div></div>
                 </div>

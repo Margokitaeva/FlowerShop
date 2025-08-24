@@ -1,3 +1,3 @@
-import {formatPrice, initMenu} from "./common.js";
+import {formatPrice, initMenu, signForNews} from "./common.js";
 
 initMenu();

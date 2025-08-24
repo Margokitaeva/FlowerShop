@@ -1,4 +1,4 @@
-import {formatPrice, initMenu} from "./common.js";
+import {formatPrice, initMenu, decodeEntities, signForNews} from "./common.js";
 import {products} from "./data.js";
 
 initMenu();
@@ -19,7 +19,7 @@ if (!item) {
 }
 else {
     hydrateItem(item);
-    // fillItemTexts(item);
+    fillItemTexts(item);
     setupBreadcrumbs(item, fromParam);
     setupPager(item, fromParam);
     setupQty();
@@ -27,10 +27,29 @@ else {
     setupItemImgs(item);
 }
 
+function getImageList(p) {
+    const list = [];
+    if (p && p.imgs && typeof p.imgs === "object") {
+        Object.keys(p.imgs)
+            .sort((a, b) => {
+                const na = parseInt(a.replace(/\D+/g, ""), 10);
+                const nb = parseInt(b.replace(/\D+/g, ""), 10);
+                if (Number.isFinite(na) && Number.isFinite(nb)) return na - nb; // src1 < src2 < src10
+                return a.localeCompare(b);
+            })
+            .forEach(k => {
+                const url = p.imgs[k];
+                if (url) list.push(url);
+            });
+    }
+    return list;
+}
+
+
 function hydrateItem(p) {
     const titleEl = document.querySelector(".sectionTitle");
-    if (titleEl) titleEl.textContent = p.title || "Ваш товар";
-    document.title = p.title || "Товар";
+    if (titleEl) titleEl.innerHTML = p.title;
+    document.title = decodeEntities(p.title) || "Товар";
 
     const costEl = document.querySelector(".cost");
     if (costEl && p.price != null) {
@@ -39,9 +58,9 @@ function hydrateItem(p) {
 
     const mainImg = document.querySelector(".product_image");
     if (mainImg) {
-        const url = p.src || p.image || (Array.isArray(p.images) && p.images.length ? p.images[0] : "");
-        mainImg.src = url || "";
-        mainImg.alt = p.title || "Фото товара";
+        const images = getImageList(p);
+        mainImg.src = images[0] || "";
+        mainImg.alt = decodeEntities(p.title) || "Фото";
     }
 
     const desc = document.querySelector(".description");
@@ -52,7 +71,7 @@ function fillItemTexts(p) {
     const descEl = document.querySelector('.description');
     if (descEl) {
         if (p.description) {
-            descEl.textContent = p.description;
+            descEl.innerHTML = p.description;
             descEl.hidden = false;
         } else {
             // если описания нет — можно скрыть блок
@@ -63,7 +82,7 @@ function fillItemTexts(p) {
     const aboutP = document.querySelector('.accordions .accordion:nth-of-type(1) .accordion_panel .textInfo');
     const aboutSection = document.querySelector('.accordions .accordion:nth-of-type(1)');
     if (aboutP && p.aboutProduct) {
-        aboutP.textContent = p.aboutProduct;
+        aboutP.innerHTML = p.aboutProduct;
         if (aboutSection) aboutSection.hidden = false;
     } else if (aboutSection && !p.aboutProduct) {
         // если нет текста — можно убрать весь аккордеон
@@ -73,7 +92,7 @@ function fillItemTexts(p) {
     const policyP = document.querySelector('.accordions .accordion:nth-of-type(2) .accordion_panel .textInfo');
     const policySection = document.querySelector('.accordions .accordion:nth-of-type(2)');
     if (policyP && p.returnPolicy) {
-        policyP.textContent = p.returnPolicy;
+        policyP.innerHTML = p.returnPolicy;
         if (policySection) policySection.hidden = false;
     } else if (policySection && !p.returnPolicy) {
         policySection.style.display = 'none';
@@ -107,7 +126,7 @@ function setupBreadcrumbs(p, from) {
 
     fragment.appendChild(document.createTextNode(" / "));
     const span = document.createElement("span");
-    span.textContent = p.title || "Ваш товар";
+    span.innerHTML = p.title;
     span.className = "textInfo";
     fragment.appendChild(span);
 
@@ -186,9 +205,15 @@ function setupItemImgs(p) {
     const mainImg = document.querySelector(".product_image");
     if (!item_imgs || !mainImg) return;
 
-    const images = Array.isArray(p.images) ? p.images.slice() : [];
-    const primary = p.src || p.image;
-    if (primary && !images.includes(primary)) images.unshift(primary);
+    const images = getImageList(p);
+    if (!images.length) {
+        item_imgs.innerHTML = "";
+        return;
+    }
+
+    // const images = Array.isArray(p.images) ? p.images.slice() : [];
+    // const primary = p.src || p.image;
+    // if (primary && !images.includes(primary)) images.unshift(primary);
 
     item_imgs.innerHTML = "";
 
@@ -196,7 +221,7 @@ function setupItemImgs(p) {
         if (!url) return;
         const img = document.createElement("img");
         img.src = url;
-        img.alt = (p.title || "Фото") + " " + (idx + 1);
+        img.alt = (decodeEntities(p.title) || "Фото") + " " + (idx + 1);
         img.className = "item_img";
         if (idx === 0) img.classList.add("active");
 

@@ -56,7 +56,7 @@ export function initMenu() {
         }, 320);
     }
 
-    document.querySelectorAll('.offcanvas_link[href*="#"]').forEach(link => {
+    document.querySelectorAll('a[href*="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
             const hashIndex = href.indexOf('#');
@@ -73,3 +73,15 @@ export function initMenu() {
     });
 }
 
+export const decodeEntities = (s) => new DOMParser().parseFromString(s, "text/html").documentElement.textContent;
+
+export function signForNews(eo) {
+    eo.preventDefault();
+    const email = document.getElementById('newsEmail').value;
+    if (email) {
+        alert("Вы подписаны на рассылку!");
+        eo.target.reset();
+    }
+}
+
+window.signForNews = signForNews;

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/base.css" type="text/css">
     <link rel="stylesheet" href="./css/shop.css" type="text/css">
     <link rel="stylesheet" href="./css/master_classes.css" type="text/css">
-    <link rel="stylesheet" href="./css/style.css" type="text/css">
+    <link rel="stylesheet" href="./css/index.css" type="text/css">
 <!--    <link rel="script" href="scripts/script.js" type="text/javascript">-->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,8 +19,11 @@
     <title>Роза и Маргарита</title>
 </head>
 <body>
+    <!-- Контейнер для фона -->
     <div class="wrapper">
+        <!-- Контейнер для фикса при щироком окне -->
         <div class="wrapper2">
+            <!-- Шапка -->
             <header class="header">
                 <div class="header_left">
                     <div class="logo">
@@ -47,7 +50,7 @@
                         </svg>
                     </div>
 
-                    <div class="menu" aria-label="Открыть меню">
+                    <div class="menu">
                         <div class="hamburger">
                             <div></div>
                             <div></div>
@@ -63,7 +66,7 @@
             <!-- Баннер hero -->
             <section class="hero" id="main">
                 <div class="hero_aligner">
-                <p class="subInfo">Доставка цветов по любому адресу в Москве</p>
+                <p class="subInfo">Доставка цветов по любому адресу в Минске</p>
                 <p class="bannerWords">цветы<br>со всего <br>света</p>
                 <a class="button_a" href="#shop" title="Открыть товары">в магазин</a>
                 </div>
@@ -72,13 +75,18 @@
             <section id="aboutUs" class="aboutUs">
                 <div class="container">
                     <p class="subtitle">о нас</p>
-                    <p class="sectionTitle">Это заголовок. Кликните, чтобы отредактировать</p>
-                    <p class="textInfo">Это текст. Нажмите один раз и выберите «Редактировать текст» или просто кликните дважды,
-                        чтобы добавить свой текст и настроить шрифт. Вы можете переместить его в любое место на странице.
-                        Расскажите посетителям сайта о себе.Здесь будет удачно смотреться текст о вашей компании и услугах.</p>
+                    <p class="sectionTitle">&laquo;Роза и Маргарита&raquo; &mdash; это не просто цветы, это эмоции, упакованные в лепестки.</p>
+                    <p class="textInfo">Мы создаём букеты, которые говорят больше любых слов. Каждый наш цветок &mdash; это история,
+                        каждая композиция &mdash; признание в чувствах. Мы тщательно подбираем свежие цветы,
+                        чтобы они радовали глаз и сердце как можно дольше.<br><br>
+                        В нашем магазине вы найдёте как нежные полевые букеты, так и элегантные композиции для особых случаев.
+                        Мы верим, что цветы способны дарить радость и вдохновение, поэтому уделяем внимание каждой детали:
+                        от выбора оттенков до упаковки.
+                        </p>
                 </div>
             </section>
 
+            <!-- Магазин -->
             <section class="shop" id="shop">
                 <div class="container">
                     <p class="subtitle">букеты</p>
@@ -97,57 +105,61 @@
                 </div>
             </section>
 
+            <!-- Мастер-класс -->
             <section class="master_classes">
                 <div class="container">
                     <p class="subtitle">мастер-классы</p>
                     <div class="master_class_div">
                         <div class="master_class_bg_image"></div>
                         <div class="master_class_info">
-                            <a class="sectionTitle">Мастер-класс по флористике</a>
+                            <a class="sectionTitle" href="master_class_registration.html" title="Перейти к регистрации на этот мастер-класс">Мастер-класс по флористике</a>
                             <a class="button_a" href="master_class_registration.html" title="Открыть регистрацию на мастер-класс" target="_blank">Записаться</a>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <!-- Подвал: информация о адресе, номере телефона и тд -->
             <footer class="footer">
                 <div id="contacts" class="container">
                     <div class="address_phone">
                         <p class="subtitle">адрес и телефон</p>
                         <p class="textInfo">
-                            ул. Арбат, 1а,<br>
-                            Москва, Россия<br>
-                            <a class="textInfo" title="Позвонить">+7 495 000-00-00</a>
+                            ул. Красноармейская, 7а,<br>
+                            Минск, Беларусь<br>
+                            <a class="textInfo" title="Позвонить">+375 29 536 22 24</a>
                         </p>
                     </div>
                     <div class="working_hours">
                         <p class="subtitle">часы работы</p>
                         <p class="textInfo">
-                            ПН–ПТ: 7:00–20:00<br>
-                            СБ: 8:00–22:00<br>
-                            ВС: 8:00–23:00
+                            ПН–ПТ: 7:00&ndash;20:00<br>
+                            СБ: 8:00&ndash;22:00<br>
+                            ВС: 8:00&ndash;23:00
                         </p>
                     </div>
 
                     <div class="news">
                         <p class="subtitle">свежие новости</p>
-                        <form method="" action="" class="formNews">
+                        <form method="POST" action="#" class="formNews" onsubmit="return signForNews(event)" >
                             <label for="newsEmail" class="textInfo">Подпишитесь на рассылку</label><br>
                             <input id="newsEmail" type="email" placeholder="Добавьте эл.почту*"  required/>
-                            <button onclick="signForKnews()">ок</button>
+                            <button type="submit">ок</button>
                         </form>
                     </div>
 
                 </div>
                 <div class="copyright">
-                    <p class="textInfo">© 2035 РОЗА И МАРГАРИТА. Сайт создан на <a href="https://wix.com">Wix.com</a></p>
+                    <p class="textInfo">&copy; 2035 РОЗА И МАРГАРИТА.</p>
                 </div>
             </footer>
 
+            <!-- Затемнение при открытии меню -->
             <div class="overlay" id="menu_overlay" hidden></div>
 
+            <!-- Меню -->
             <nav class="offcanvas" id="site_menu" >
-            <div class="offcanvas_close" id="menu_close" aria-label="Закрыть меню">
+            <div class="offcanvas_close" id="menu_close">
                 <div></div>
                 <div></div>
             </div>
@@ -162,7 +174,7 @@
 
         </div>
     </div>
-<!--    <script src="./scripts/script.js" defer></script>-->
+
     <script type="module" src="./scripts/shop.js" defer></script>
 </body>
 </html>
