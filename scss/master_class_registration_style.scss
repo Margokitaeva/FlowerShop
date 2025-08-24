@@ -377,3 +377,7 @@
         }
     }
 }
+
+@media only all and (max-width: 440px) {
+    .container {width: 100% !important; padding-left: 30px; padding-right: 30px;}
+}

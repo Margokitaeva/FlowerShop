@@ -644,6 +644,8 @@
         }
     }
 
+    .shop p.subtitle, .shop p.sectionTitle { margin-left: 0 !important; }
+
     .aboutUs .container {
         width: 100%;
     }
@@ -652,6 +654,8 @@
 
         .master_class_div {
             flex-direction: column;
+
+            a.button_a { margin-bottom: 20px;}
         }
     }
 }

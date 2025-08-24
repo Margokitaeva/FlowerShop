@@ -38,5 +38,7 @@
 @media only all and (max-width: 790px) {
     .shop .container {
         width: 90%;
+
+        p.subtitle { margin-left: 0 !important; }
     }
 }
