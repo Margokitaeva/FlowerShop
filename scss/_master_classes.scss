@@ -3,10 +3,10 @@
         margin: auto;
 
         .master_class_div {
-            display: grid;
+            display: flex;
 
             .master_class_bg_image {
-
+                flex: 1.6 1 0;
                 background: url("https://static.wixstatic.com/media/dae918_2b3d72c973fd4359ac82ab0e0fe38c6c~mv2_d_5281_3986_s_4_2.jpg/v1/fill/w_1080,h_806,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/dae918_2b3d72c973fd4359ac82ab0e0fe38c6c~mv2_d_5281_3986_s_4_2.jpg") no-repeat center;
                 background-size: cover;
 
@@ -18,6 +18,7 @@
             }
 
             .master_class_info {
+                flex: 1 1 0;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;

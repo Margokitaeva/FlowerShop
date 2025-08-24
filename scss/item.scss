@@ -173,3 +173,18 @@
 //    .product_info .container { width: 85%; }
 //
 //}
+
+@media only all and (max-width: 790px) {
+    .container {width: 90% !important;}
+    .twoColsContent {
+        flex-direction: column;
+
+        .left_part {width: 100% !important;}
+
+        .right_part { width: 100% !important; padding-left: 0 !important; }
+
+        p.sectionTitle { padding-bottom: 5px;}
+
+
+    }
+}

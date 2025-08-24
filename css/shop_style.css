@@ -123,6 +123,14 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   width: 100%;
 }
 
+.wrapper2 {
+  width: 100%;
+}
+
+.container {
+  transition: 0.5s;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -202,7 +210,7 @@ header .header_right .menu .hamburger {
 }
 header .header_right .menu .hamburger div {
   height: 3px;
-  border: #0a331e solid;
+  border: #0a331e solid 1px;
   border-radius: 5px;
   background-color: #0a331e;
   margin: 4px;
@@ -298,7 +306,7 @@ header .header_right .menu.open .hamburger {
 }
 .offcanvas .offcanvas_close div {
   height: 3px;
-  border: #0a331e solid;
+  border: #0a331e solid 1px;
   border-radius: 5px;
   background-color: #0a331e;
   margin: 4px;
@@ -364,6 +372,46 @@ header .header_right .menu.open .hamburger {
   .footer .container .news button {
     padding: 10px 2em 10px 2em;
   }
+  .offcanvas {
+    align-items: flex-end;
+  }
+  .offcanvas .offcanvas_list {
+    margin: 100px 0 0 0;
+    text-align: right;
+  }
+}
+@media only all and (max-width: 790px) {
+  .footer .container {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .footer .container .news {
+    width: 100%;
+  }
+  .footer .container .news input {
+    width: 100% !important;
+  }
+  .footer .container .news button {
+    width: 100%;
+  }
+}
+@media only all and (max-width: 1435px) {
+  .formNews {
+    width: 100%;
+  }
+  .formNews input {
+    width: 100% !important;
+  }
+}
+@media only all and (min-width: 2000px) {
+  .wrapper {
+    display: flex;
+  }
+  .wrapper2 {
+    width: 1650px;
+    margin: auto;
+  }
 }
 .shop .container {
   padding-bottom: 80px;
@@ -420,4 +468,10 @@ header .header_right .menu.open .hamburger {
   outline: 3px dashed magenta !important;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22file:///D:/Courses/html_css_js/Margo/html/FlowerShop/scss/_base.scss%22,%22file:///D:/Courses/html_css_js/Margo/html/FlowerShop/scss/_variables.scss%22,%22file:///D:/Courses/html_css_js/Margo/html/FlowerShop/scss/_shop.scss%22,%22file:///D:/Courses/html_css_js/Margo/html/FlowerShop/scss/shop_style.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAEA;EACI;EACA;EACA;;;AAGJ;EACI,OCNS;;;ADSb;EACI,YCbS;EDcT,OCVe;EDWf;EACA,aCXS;EDYT;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;EACA;;;AAGJ;EACI;EACA,YCpCS;EDqCT,OCjCe;EDkCf;EACA,aClCS;EDmCT;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;EACA;EACA,OCrDS;EDsDT,aCpDS;EDqDT;EACA;EACA;EACA;EACA;EACA;;AAGA;EACI;EACA;EACA;EACA;EACA,kBCvEK;EDwEL;;;AAIR;EACI,OC1ES;ED2ET,aCxEW;EDyEX;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI,OCvFS;EDwFT,aCtFS;EDuFT;EACA;EACA;EACA;EACA;;;AAIJ;EACI;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EACA;EACA;;;AAGJ;EACI;EACA;;;AAGJ;EACI;;;AAGJ;EACI;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EAAQ;EACR;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;;AAGJ;EACI;EACA;EAEA;;AAEA;EACI;EACA;EACA;;AAEA;EACI,MC5JH;;AD+JD;EACI;EACA,QCjKH;EDkKG;;AAMR;EACI,aCpKC;EDqKD;EACA;EACA;EACA;EACA;EACA;EACA,OC7KC;ED8KD;;AAGJ;EACI;;AAIR;EACI;EACA;EACA;;AAEA;EACI;EACA;;AAEA;EACI,QCnMH;EDoMG;;AACA;EACI,MCtMP;EDuMO;;AAKZ;EACI;EACA;EACA;EACA;EACA;;AAEA;EAEI;EACA;EAAQ;EAAS;EACjB;;AAGJ;EACI;EACA;EACA;EACA,kBC9NH;ED+NG;;AASJ;EAAY;;AAMR;EAEI;;;AAapB;EACI;;AAEA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;;AAaJ;EACI;;AAEA;EACI;;AAEA;EACI;EACA;EACA;EACA;EACA;;AAGJ;EACI;;AAGJ;EACI;;AAOhB;EACI;EACA;EACA;;AAQR;EACI;;;AAGJ;EACI;EAAiB;EACjB;EACA;EAAY;EACZ;EACA;;AAEA;EACI;EACA;;;AAIR;EACI;EACA;EAAQ;EACR;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EAAW;EACX;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;EACA,kBCxWC;EDyWD;;AAGJ;EAAkB;;AAClB;EAAkB;;AAItB;EACI;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA,OCxXC;EDyXD,aCvXC;EDwXD;EACA;EACA;;AAGA;EACI;EACA;EACA;EACA;;AAIJ;EACI,OCzYH;;ADgZT;EACI;;AAEA;EACI;EACA;;AAUA;EACI;;AADJ;EACI;;AADJ;EACI;;AADJ;EACI;;AADJ;EACI;;;AAMhB;EACI;IACI;;EAGI;IACI;;;AE5aZ;EAII;EACA;EACA;;AAEA;EACI;EACA;;AAGJ;EAQI;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;EAGA;;AAEA;EACI;EACA;EACA;EACA;EACA;;AAKJ;EACI;;AAEJ;EACI;;AAOZ;EACI;;;ACrDZ;EACI;;AAEA;EACI;EACA;;AAGA;EACI;;AAGJ;EACI;;AAWZ;EAAkB%22,%22file%22:%22shop_style.css%22%7D */
+@media only all and (max-width: 790px) {
+  .shop .container {
+    width: 90%;
+  }
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22file:///D:/Courses/html_css_js/Margo/html/FlowerShop/scss/_base.scss%22,%22file:///D:/Courses/html_css_js/Margo/html/FlowerShop/scss/_variables.scss%22,%22file:///D:/Courses/html_css_js/Margo/html/FlowerShop/scss/_shop.scss%22,%22file:///D:/Courses/html_css_js/Margo/html/FlowerShop/scss/shop_style.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAEA;EACI;EACA;EACA;;;AAGJ;EACI,OCNS;;;ADSb;EACI,YCbS;EDcT,OCVe;EDWf;EACA,aCXS;EDYT;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;EACA;;;AAGJ;EACI;EACA,YCpCS;EDqCT,OCjCe;EDkCf;EACA,aClCS;EDmCT;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;EACA;EACA,OCrDS;EDsDT,aCpDS;EDqDT;EACA;EACA;EACA;EACA;EACA;;AAGA;EACI;EACA;EACA;EACA;EACA,kBCvEK;EDwEL;;;AAIR;EACI,OC1ES;ED2ET,aCxEW;EDyEX;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI,OCvFS;EDwFT,aCtFS;EDuFT;EACA;EACA;EACA;EACA;;;AAIJ;EACI;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EACA;EACA;;;AAGJ;EACI;EACA;;;AAGJ;EACI;;;AAGJ;EACI;EACA;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;;;AAGJ;EACI;EACA;EAAQ;EACR;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;;AAGJ;EACI;EACA;EAEA;;AAEA;EACI;EACA;EACA;;AAEA;EACI,MCpKH;;ADuKD;EACI;EACA,QCzKH;ED0KG;;AAMR;EACI,aC5KC;ED6KD;EACA;EACA;EACA;EACA;EACA;EACA,OCrLC;EDsLD;;AAGJ;EACI;;AAIR;EACI;EACA;EACA;;AAEA;EACI;EACA;;AAEA;EACI,QC3MH;ED4MG;;AACA;EACI,MC9MP;ED+MO;;AAKZ;EACI;EACA;EACA;EACA;EACA;;AAEA;EAEI;EACA;EAAQ;EAAS;EACjB;;AAGJ;EACI;EACA;EACA;EACA,kBCtOH;EDuOG;;AASJ;EAAY;;AAMR;EAEI;;;AAapB;EACI;;AAEA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;;AAaJ;EACI;;AAEA;EACI;;AAEA;EACI;EACA;EACA;EACA;EACA;;AAGJ;EACI;;AAGJ;EACI;;AAOhB;EACI;EACA;EACA;;AAQR;EACI;;;AAGJ;EACI;EAAiB;EACjB;EACA;EAAY;EACZ;EACA;;AAEA;EACI;EACA;;;AAIR;EACI;EACA;EAAQ;EACR;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EAAW;EACX;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;EACA,kBChXC;EDiXD;;AAGJ;EAAkB;;AAClB;EAAkB;;AAItB;EACI;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA,OChYC;EDiYD,aC/XC;EDgYD;EACA;EACA;;AAGA;EACI;EACA;EACA;EACA;;AAIJ;EACI,OCjZH;;ADwZT;EACI;;AAEA;EACI;EACA;;AAUA;EACI;;AADJ;EACI;;AADJ;EACI;;AADJ;EACI;;AADJ;EACI;;;AAMhB;EACI;IACI;;EAGI;IACI;;EAKZ;IACI;;EACA;IACI;IACA;;;AAKZ;EAEI;IACI;IACA;IACA;;EAEA;IACI;;EAEA;IACI;;EAGJ;IACI;;;AAYhB;EACI;IAAY;;EACZ;IAAiB;;;AAGrB;EACI;IAAU;;EACV;IAAY;IAAe;;;AEpe3B;EAII;EACA;EACA;;AAEA;EACI;EACA;;AAGJ;EAQI;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;EAGA;;AAEA;EACI;EACA;EACA;EACA;EACA;;AAKJ;EACI;;AAEJ;EACI;;AAOZ;EACI;;;ACrDZ;EACI;;AAEA;EACI;EACA;;AAGA;EACI;;AAGJ;EACI;;AAWZ;EAAkB;;;AAQlB;EACI;IACI%22,%22file%22:%22shop_style.css%22%7D */

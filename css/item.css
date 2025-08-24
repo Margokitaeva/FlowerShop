@@ -413,196 +413,132 @@ header .header_right .menu.open .hamburger {
     margin: auto;
   }
 }
-.shop .container {
-  padding-bottom: 80px;
-  display: flex;
-  flex-direction: column;
+.product_info {
+  padding: 100px 0 0 0;
 }
-.shop .container .subtitle .sectionTitle {
-  align-self: flex-start;
-  text-align: left;
-}
-.shop .container .products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
-  align-items: start;
-}
-.shop .container .products .product {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.shop .container .products .product .product_image {
-  width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  display: block;
-  border-radius: 4px;
-}
-.shop .container .products .product .product_title {
-  margin: 1em 0 0.5em 0;
-}
-.shop .container .products .product .product_price {
-  font-size: 12px;
-}
-.shop .container a {
-  align-self: center;
-}
-
-.master_classes .container {
-  margin: auto;
-}
-.master_classes .container .master_class_div {
-  display: flex;
-}
-.master_classes .container .master_class_div .master_class_bg_image {
-  flex: 1.6 1 0;
-  background: url("https://static.wixstatic.com/media/dae918_2b3d72c973fd4359ac82ab0e0fe38c6c~mv2_d_5281_3986_s_4_2.jpg/v1/fill/w_1080,h_806,fp_0.50_0.50,q_85,usm_0.66_1.00_0.01,enc_auto/dae918_2b3d72c973fd4359ac82ab0e0fe38c6c~mv2_d_5281_3986_s_4_2.jpg") no-repeat center;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  object-position: center;
-  display: block;
-}
-.master_classes .container .master_class_div .master_class_info {
-  flex: 1 1 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.master_classes .container .master_class_div .master_class_info a:not(.button_a):hover {
-  opacity: 0.7;
-}
-.master_classes .container .master_class_div .master_class_info a.button_a {
-  text-transform: none;
-  font-size: 16px;
-  padding: 10px 1.5em 10px 1.5em;
-}
-
-.hero {
-  transition: 0.5s;
-  text-align: left;
-  padding: 136px 0 300px 20vw;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.hero p.subInfo {
-  position: relative;
-  display: inline-block;
-  color: white;
-  font-family: "Playfair Display", serif;
-  font-style: italic;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-size: 24px;
-  letter-spacing: 0.02em;
-  transition: 1s;
-}
-.hero p.subInfo:after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 2px;
-  background-color: white;
-  margin-top: 8px;
-}
-.hero .bannerWords {
-  font-family: "Raleway", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 900;
-  font-style: normal;
-  font-size: 142px;
-  color: white;
-  text-decoration: underline;
-  text-transform: uppercase;
-  transition: 0.1s;
-  margin-bottom: 20px;
-}
-
-.aboutUs {
-  padding: 0 0 350px 0;
-}
-.aboutUs .container {
-  width: 60%;
-  margin: auto;
-}
-
-.shop .container p.subtitle {
-  margin: 20px 0 0 10%;
-}
-.shop .container p.sectionTitle {
-  margin: 0 0 50px 10%;
-}
-.shop .container .products {
-  margin-bottom: 100px;
-}
-
-.master_classes {
+.product_info .container {
   background: white;
-  padding: 0 0 80px 0;
-}
-.master_classes .container {
   width: 60%;
-  transition: 0.5s;
+  margin: auto;
+  transition: 0.3s;
 }
-.master_classes .container .subtitle::after {
-  content: none;
+.product_info .container .items_control {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 50px 0;
 }
-.master_classes .container .master_class_div {
+.product_info .container .item_content {
+  display: flex;
+  flex-direction: column;
+}
+.product_info .container .item_content .twoColsContent {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 20px 0;
+}
+.product_info .container .item_content .twoColsContent .left_part {
+  width: 55%;
+}
+.product_info .container .item_content .twoColsContent .left_part .product_image {
   width: 100%;
-  border: #adcfdb solid 3px;
-  height: 400px;
-  margin-top: 20px;
 }
-.master_classes .container .master_class_div .master_class_info {
+.product_info .container .item_content .twoColsContent .left_part .item_imgs {
+  height: 50px;
+}
+.product_info .container .item_content .twoColsContent .left_part .item_imgs .item_img {
+  width: 50px;
+  height: 50px;
+}
+.product_info .container .item_content .twoColsContent .right_part {
+  width: 45%;
+  padding-left: 20px;
+}
+.product_info .container .item_content .twoColsContent .right_part .sectionTitle {
+  padding-top: 0;
+}
+.product_info .container .item_content .twoColsContent .right_part .cost {
+  margin: 0 0 20px 0;
+}
+.product_info .container .item_content .twoColsContent .right_part .qty {
+  border: 2px solid #0a331e;
+  display: flex;
+  width: 100px;
+  gap: 0;
+  margin: 5px 0 0 0;
+}
+.product_info .container .item_content .twoColsContent .right_part .qty input {
+  width: 33%;
+  border: none;
+  text-align: center;
+  height: 32px;
+}
+.product_info .container .item_content .twoColsContent .right_part .qty input:hover {
+  border: none;
+}
+.product_info .container .item_content .twoColsContent .right_part .qty button {
+  background: white;
+  color: #06331c;
+  padding: 7px 10px 7px 10px;
+  width: 33%;
+  height: 32px;
+  display: inline-flex;
+  justify-content: center;
   align-items: center;
 }
-.master_classes .container .master_class_div .master_class_info a {
+.product_info .container .item_content .twoColsContent .right_part .qty button span {
+  display: inline-block;
+  transform-origin: center;
+  pointer-events: none;
+}
+.product_info .container .item_content .twoColsContent .right_part .qty .qty_minus span {
+  transform: scale(3) translateY(-1px);
+}
+.product_info .container .item_content .twoColsContent .right_part .qty .qty_plus span {
+  transform: scale(3);
+}
+.product_info .container .item_content .twoColsContent .right_part a.button_a {
+  margin: 10px 0 10px 0;
+  padding: 10px 5% 10px 5%;
+  width: 100%;
   text-align: center;
 }
-.master_classes .container .master_class_div .master_class_info a.button_a {
-  background: #5e8567;
+.product_info .container .item_content .twoColsContent .right_part .accordions .accordion .accordion_toggle {
+  background: white;
+  color: #06331c;
+  padding: 10px 0 10px 0;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
 }
-.master_classes .container .master_class_div .master_class_info a.button_a:hover {
-  text-decoration: underline;
+.product_info .container .item_content .twoColsContent .right_part .accordions .accordion .accordion_toggle .sign {
+  margin-left: auto;
+  transform: scale(3);
+}
+.product_info .container .item_content .twoColsContent .right_part .accordions .accordion .accordion_panel p {
+  font-size: 12px;
+}
+.product_info .container .item_content p.description {
+  clear: both;
 }
 
 @media only all and (max-width: 790px) {
-  .hero {
-    padding-left: 10%;
-    padding-right: 15%;
+  .container {
+    width: 90% !important;
   }
-  .hero .bannerWords {
-    font-size: 92px !important;
-  }
-  .aboutUs .container {
-    width: 100%;
-  }
-  .master_classes .container {
-    width: 95%;
-  }
-  .master_classes .container .master_class_div {
+  .twoColsContent {
     flex-direction: column;
   }
-}
-@media only all and (min-width: 791px) and (max-width: 1023px) {
-  .master_classes .container {
-    width: 80%;
+  .twoColsContent .left_part {
+    width: 100% !important;
   }
-}
-@media only all and (min-width: 1030px) {
-  .shop .container .products {
-    grid-template-columns: repeat(4, minmax(200px, 1fr));
+  .twoColsContent .right_part {
+    width: 100% !important;
+    padding-left: 0 !important;
   }
-}
-@media only all and (min-width: 2000px) {
-  .wrapper2 .hero {
-    padding-left: 379.5px;
+  .twoColsContent p.sectionTitle {
+    padding-bottom: 5px;
   }
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22file:///D:/Courses/html_css_js/Margo/html/FlowerShop/scss/_base.scss%22,%22file:///D:/Courses/html_css_js/Margo/html/FlowerShop/scss/_variables.scss%22,%22file:///D:/Courses/html_css_js/Margo/html/FlowerShop/scss/_shop.scss%22,%22file:///D:/Courses/html_css_js/Margo/html/FlowerShop/scss/_master_classes.scss%22,%22file:///D:/Courses/html_css_js/Margo/html/FlowerShop/scss/style.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAEA;EACI;EACA;EACA;;;AAGJ;EACI,OCNS;;;ADSb;EACI,YCbS;EDcT,OCVe;EDWf;EACA,aCXS;EDYT;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;EACA;;;AAGJ;EACI;EACA,YCpCS;EDqCT,OCjCe;EDkCf;EACA,aClCS;EDmCT;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;EACA;EACA,OCrDS;EDsDT,aCpDS;EDqDT;EACA;EACA;EACA;EACA;EACA;;AAGA;EACI;EACA;EACA;EACA;EACA,kBCvEK;EDwEL;;;AAIR;EACI,OC1ES;ED2ET,aCxEW;EDyEX;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI,OCvFS;EDwFT,aCtFS;EDuFT;EACA;EACA;EACA;EACA;;;AAIJ;EACI;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EACA;EACA;;;AAGJ;EACI;EACA;;;AAGJ;EACI;;;AAGJ;EACI;EACA;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;;;AAGJ;EACI;EACA;EAAQ;EACR;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;;AAGJ;EACI;EACA;EAEA;;AAEA;EACI;EACA;EACA;;AAEA;EACI,MCpKH;;ADuKD;EACI;EACA,QCzKH;ED0KG;;AAMR;EACI,aC5KC;ED6KD;EACA;EACA;EACA;EACA;EACA;EACA,OCrLC;EDsLD;;AAGJ;EACI;;AAIR;EACI;EACA;EACA;;AAEA;EACI;EACA;;AAEA;EACI,QC3MH;ED4MG;;AACA;EACI,MC9MP;ED+MO;;AAKZ;EACI;EACA;EACA;EACA;EACA;;AAEA;EAEI;EACA;EAAQ;EAAS;EACjB;;AAGJ;EACI;EACA;EACA;EACA,kBCtOH;EDuOG;;AASJ;EAAY;;AAMR;EAEI;;;AAapB;EACI;;AAEA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;;AAaJ;EACI;;AAEA;EACI;;AAEA;EACI;EACA;EACA;EACA;EACA;;AAGJ;EACI;;AAGJ;EACI;;AAOhB;EACI;EACA;EACA;;AAQR;EACI;;;AAGJ;EACI;EAAiB;EACjB;EACA;EAAY;EACZ;EACA;;AAEA;EACI;EACA;;;AAIR;EACI;EACA;EAAQ;EACR;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EAAW;EACX;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;EACA,kBChXC;EDiXD;;AAGJ;EAAkB;;AAClB;EAAkB;;AAItB;EACI;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA,OChYC;EDiYD,aC/XC;EDgYD;EACA;EACA;;AAGA;EACI;EACA;EACA;EACA;;AAIJ;EACI,OCjZH;;ADwZT;EACI;;AAEA;EACI;EACA;;AAUA;EACI;;AADJ;EACI;;AADJ;EACI;;AADJ;EACI;;AADJ;EACI;;;AAMhB;EACI;IACI;;EAGI;IACI;;EAKZ;IACI;;EACA;IACI;IACA;;;AAKZ;EAEI;IACI;IACA;IACA;;EAEA;IACI;;EAEA;IACI;;EAGJ;IACI;;;AAYhB;EACI;IAAY;;EACZ;IAAiB;;;AAGrB;EACI;IAAU;;EACV;IAAY;IAAe;;;AEpe3B;EAII;EACA;EACA;;AAEA;EACI;EACA;;AAGJ;EAQI;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;EAGA;;AAEA;EACI;EACA;EACA;EACA;EACA;;AAKJ;EACI;;AAEJ;EACI;;AAOZ;EACI;;;ACzDR;EACI;;AAEA;EACI;;AAEA;EACI;EACA;EACA;EAEA;EACA;EAEA;EACA;;AAGJ;EACI;EACA;EACA;EACA;;AAGA;EAAwB;;AAExB;EACI;EACA;EACA;;;ACoOpB;EACI;EACA;EACA;EAEA;EACA;EACA;EACA;;AAGA;EACI;EACA;EACA,OH7QW;EG8QX,aH5QO;EG6QP;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;EACA;EACA;EACA;;AAIR;EACI,aHhSK;EGiSL;EACA;EACA;EACA;EACA,OHtSW;EGuSX;EACA;EACA;EACA;;;AAeR;EACI;;AACA;EAEI;EACA;;;AAsBA;EACI;;AAGJ;EACI;;AAGJ;EAYI;;;AAqCZ;EACI;EACA;;AACA;EAEI;EACA;;AAEA;EACI;;AAGJ;EAEI;EACA;EACA;EAGA;;AAgBA;EAII;;AAEA;EAAI;;AAIJ;EAEI,YH/bN;;AGocE;EAAkB;;;AAuLlC;EACI;IACI;IACA;;EAEA;IACI;;EAIR;IACI;;EAEJ;IACI;;EAEA;IACI;;;AAKZ;EACI;IAA4B;;;AAGhC;EACI;IACI;;;AAMR;EAEQ;IACI%22,%22file%22:%22style.css%22%7D */
+/*# sourceMappingURL=data:application/json;charset=utf-8,%7B%22version%22:3,%22sourceRoot%22:%22%22,%22sources%22:%5B%22file:///D:/Courses/html_css_js/Margo/html/FlowerShop/scss/_base.scss%22,%22file:///D:/Courses/html_css_js/Margo/html/FlowerShop/scss/_variables.scss%22,%22file:///D:/Courses/html_css_js/Margo/html/FlowerShop/scss/item.scss%22%5D,%22names%22:%5B%5D,%22mappings%22:%22AAEA;EACI;EACA;EACA;;;AAGJ;EACI,OCNS;;;ADSb;EACI,YCbS;EDcT,OCVe;EDWf;EACA,aCXS;EDYT;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;EACA;;;AAGJ;EACI;EACA,YCpCS;EDqCT,OCjCe;EDkCf;EACA,aClCS;EDmCT;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;EACA;EACA,OCrDS;EDsDT,aCpDS;EDqDT;EACA;EACA;EACA;EACA;EACA;;AAGA;EACI;EACA;EACA;EACA;EACA,kBCvEK;EDwEL;;;AAIR;EACI,OC1ES;ED2ET,aCxEW;EDyEX;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGJ;EACI,OCvFS;EDwFT,aCtFS;EDuFT;EACA;EACA;EACA;EACA;;;AAIJ;EACI;EACA;EACA;EACA;;;AAGJ;EACI;EACA;EACA;EACA;;;AAGJ;EACI;EACA;;;AAGJ;EACI;;;AAGJ;EACI;EACA;EACA;EACA;;;AAGJ;EACI;;;AAGJ;EACI;;;AAGJ;EACI;EACA;EAAQ;EACR;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;;AAGJ;EACI;EACA;EAEA;;AAEA;EACI;EACA;EACA;;AAEA;EACI,MCpKH;;ADuKD;EACI;EACA,QCzKH;ED0KG;;AAMR;EACI,aC5KC;ED6KD;EACA;EACA;EACA;EACA;EACA;EACA,OCrLC;EDsLD;;AAGJ;EACI;;AAIR;EACI;EACA;EACA;;AAEA;EACI;EACA;;AAEA;EACI,QC3MH;ED4MG;;AACA;EACI,MC9MP;ED+MO;;AAKZ;EACI;EACA;EACA;EACA;EACA;;AAEA;EAEI;EACA;EAAQ;EAAS;EACjB;;AAGJ;EACI;EACA;EACA;EACA,kBCtOH;EDuOG;;AASJ;EAAY;;AAMR;EAEI;;;AAapB;EACI;;AAEA;EACI;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;;AAaJ;EACI;;AAEA;EACI;;AAEA;EACI;EACA;EACA;EACA;EACA;;AAGJ;EACI;;AAGJ;EACI;;AAOhB;EACI;EACA;EACA;;AAQR;EACI;;;AAGJ;EACI;EAAiB;EACjB;EACA;EAAY;EACZ;EACA;;AAEA;EACI;EACA;;;AAIR;EACI;EACA;EAAQ;EACR;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EAAW;EACX;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA;EACA,kBChXC;EDiXD;;AAGJ;EAAkB;;AAClB;EAAkB;;AAItB;EACI;EACA;EACA;EACA;EACA;;AAEA;EACI;EACA;EACA,OChYC;EDiYD,aC/XC;EDgYD;EACA;EACA;;AAGA;EACI;EACA;EACA;EACA;;AAIJ;EACI,OCjZH;;ADwZT;EACI;;AAEA;EACI;EACA;;AAUA;EACI;;AADJ;EACI;;AADJ;EACI;;AADJ;EACI;;AADJ;EACI;;;AAMhB;EACI;IACI;;EAGI;IACI;;EAKZ;IACI;;EACA;IACI;IACA;;;AAKZ;EAEI;IACI;IACA;IACA;;EAEA;IACI;;EAEA;IACI;;EAGJ;IACI;;;AAYhB;EACI;IAAY;;EACZ;IAAiB;;;AAGrB;EACI;IAAU;;EACV;IAAY;IAAe;;;AEne/B;EACI;;AACA;EACI;EACA;EACA;EACA;;AAGA;EACI;EACA;EACA;;AAGJ;EACI;EACA;;AAEA;EACI;EACA;EACA;;AAEA;EACI;;AACA;EAEI;;AAIJ;EACI;;AAEA;EACI;EACA;;AAMZ;EACI;EACA;;AAEA;EAAgB;;AAGhB;EAAQ;;AAER;EACI;EACA;EACA;EAEA;EACA;;AAGA;EACI;EACA;EACA;EACA;;AAGJ;EACI;;AAGJ;EACI;EACA,OD1Ef;EC4Ee;EACA;EACA;EACA;EACA;EACA;;AAIA;EAEI;EAEA;EACA;;AAQR;EACI;;AAGJ;EACI;;AAQR;EACI;EACA;EACA;EACA;;AAUI;EACI;EACA,OD/HnB;ECgImB;EACA;EACA;EACA;EACA;;AAGA;EACI;EAEA;;AASJ;EACI;;AASxB;EACI;;;AAehB;EACI;IAAY;;EACZ;IACI;;EAEA;IAAY;;EAEZ;IAAc;IAAwB;;EAEtC;IAAiB%22,%22file%22:%22item.css%22%7D */

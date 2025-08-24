@@ -60,7 +60,27 @@
     }
 }
 
-@media only all and (max-width: 800px) {
-    .master_classes .container { width: 85%; }
+//@media only all and (max-width: 800px) {
+//    .master_classes .container { width: 85%; }
+//
+//}
 
+@media only all and (max-width: 900px) {
+    .container {width: 90% !important;}
+}
+
+@media only all and (max-width: 600px) {
+    .master_classes .container {
+        width: 90%;
+
+        p.subtitle {margin-left: 0;}
+
+        .master_class_div {
+            flex-direction: column;
+
+            //.master_class_bg_image {flex: 1.8 1 0;}
+
+            .master_class_info {margin: 10px 0 0 0;}
+        }
+    }
 }
