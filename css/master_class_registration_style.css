@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .registration {
   padding: 100px 0 0 0;
 }
@@ -6,7 +5,6 @@
   width: 80%;
   background: white;
   margin: auto;
-  /* ===== GRID LAYOUT ===== */
 }
 .registration .container a.textInfo {
   font-size: 16px;
@@ -29,9 +27,6 @@
   grid-template-columns: minmax(240px, 330px) minmax(80px, 1fr) minmax(150px, 1fr);
   gap: 28px;
   align-items: start;
-  /* ===== КАЛЕНДАРЬ (левая колонка) ===== */
-  /* ===== СЛОТЫ (середина) ===== */
-  /* ===== ПРАВАЯ КОЛОНКА ===== */
 }
 .registration .container .mc_layout .calendar {
   border-top: 1px solid #dcdcdc;
@@ -47,7 +42,6 @@
   font-weight: 600;
 }
 .registration .container .mc_layout .calendar .cal_head button.cal_nav {
-  /* перебиваем глобальный button */
   background: #fff;
   color: #06331c;
   text-transform: none;
@@ -76,7 +70,6 @@
   color: #666;
 }
 .registration .container .mc_layout .calendar .cal-grid button {
-  /* перебиваем глобальный button */
   background: #fff;
   color: #06331c;
   text-transform: none;
@@ -122,7 +115,6 @@
   gap: 16px 18px;
 }
 .registration .container .mc_layout .times .times-list button {
-  /* перебиваем глобальный button */
   background: #fff;
   color: #06331c;
   text-transform: none;
@@ -146,9 +138,6 @@
 .registration .container .mc_layout .details {
   border-top: 1px solid #dcdcdc;
   padding-top: 10px;
-  /* «Дальше» (зелёная кнопка) — пользуемся твоим глобальным стилем, добавим размеры */
-  /* Аккордеон */
-  /* Блок сводки в форме */
 }
 .registration .container .mc_layout .details .sep {
   border: 0;
@@ -177,7 +166,7 @@
   align-items: center;
   padding: 10px 12px;
   border: 1px solid #dcdcdc;
-  background: #fff; /* перекрываем глобальный button */
+  background: #fff;
   color: #06331c;
   text-transform: none;
   border-radius: 6px;
@@ -255,12 +244,6 @@
 }
 
 @media (max-width: 790px) {
-  .registration .container {
-    /* 1. одна колонка на мобиле (как и хотела раньше) */
-    /* 2. ФИКС календаря: 7 колонок по 30px + 6 промежутков по 8px = 258px */
-    /* 3. Время: по умолчанию 2 колонки → если слишком узко — 1 колонка */
-    /* 4. Форма — поля в одну колонку на мобиле */
-  }
   .registration .container .mc_layout {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -276,31 +259,25 @@
     grid-area: details;
   }
   .registration .container .calendar {
-    /* центрируем сам календарь */
     justify-self: center;
-    /* сетка дней/шапки — ровно 7*30px с gap 8px */
-    /* кнопки дней — убираем aspect-ratio, делаем 30x30 */
   }
   .registration .container .calendar .cal_head {
-    width: 258px; /* шапка с навигацией той же ширины */
+    width: 258px;
     margin: 10px auto 12px;
   }
-  .registration .container .calendar .cal-weekdays,
-  .registration .container .calendar .cal-grid {
+  .registration .container .calendar .cal-weekdays, .registration .container .calendar .cal-grid {
     grid-template-columns: repeat(7, 30px);
     gap: 8px;
-    width: 258px; /* фикс ширина на мобиле */
-    margin: 0 auto; /* центрируем внутри колонки */
+    width: 258px;
+    margin: 0 auto;
   }
   .registration .container .calendar .cal-grid button {
     width: 30px;
     height: 30px;
     padding: 0;
-    /* остальное оставляешь как есть (бордеры, ховеры и т.п.) */
   }
   .registration .container .times {
-    container-type: inline-size; /* включаем container query только на мобиле */
-    /* когда сама колонка .times уже узкая (<128px), слоты в один столбик */
+    container-type: inline-size;
   }
   .registration .container .times .times-list {
     grid-template-columns: 1fr 1fr;

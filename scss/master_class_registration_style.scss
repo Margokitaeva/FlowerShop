@@ -27,16 +27,13 @@
             margin: 50px 0 20px 0;
         }
 
-
-
-        /* ===== GRID LAYOUT ===== */
         .mc_layout {
             display: grid;
             grid-template-columns: minmax(240px, 330px) minmax(80px, 1fr) minmax(150px, 1fr);
             gap: 28px;
             align-items: start;
 
-            /* ===== КАЛЕНДАРЬ (левая колонка) ===== */
+            //  календарь (левая колонка)
             .calendar {
                 border-top: 1px solid #dcdcdc;
                 padding-top: 10px;
@@ -52,7 +49,6 @@
                     }
 
                     button.cal_nav {
-                        /* перебиваем глобальный button */
                         background: #fff ;
                         color: $text_color;
                         text-transform: none;
@@ -89,7 +85,6 @@
 
                 .cal-grid {
                     button {
-                        /* перебиваем глобальный button */
                         background: #fff ;
                         color: $text_color ;
                         text-transform: none ;
@@ -125,7 +120,7 @@
                 }
             }
 
-            /* ===== СЛОТЫ (середина) ===== */
+            // слоты (середина)
             .times {
                 border-top: 1px solid #dcdcdc;
                 padding-top: 10px;
@@ -147,7 +142,6 @@
                     gap: 16px 18px;
 
                     button {
-                        /* перебиваем глобальный button */
                         background: #fff;
                         color: $text_color;
                         text-transform: none;
@@ -174,7 +168,7 @@
                 }
             }
 
-            /* ===== ПРАВАЯ КОЛОНКА ===== */
+            // правая колонка
             .details {
                 border-top: 1px solid #dcdcdc;
                 padding-top: 10px;
@@ -185,7 +179,6 @@
                     margin: 8px 0 14px;
                 }
 
-                /* «Дальше» (зелёная кнопка) — пользуемся твоим глобальным стилем, добавим размеры */
                 #btn_next.btn-primary,
                 .btn-primary {
                     width: 100%;
@@ -199,7 +192,7 @@
                     }
                 }
 
-                /* Аккордеон */
+                // аккордион
                 .acc {
                     margin: 6px 0 12px;
 
@@ -210,7 +203,7 @@
                         align-items: center;
                         padding: 10px 12px;
                         border: 1px solid #dcdcdc;
-                        background: #fff; /* перекрываем глобальный button */
+                        background: #fff;
                         color: $text_color;
                         text-transform: none;
                         border-radius: 6px;
@@ -256,7 +249,7 @@
                     }
                 }
 
-                /* Блок сводки в форме */
+                // блок сводки в форме
                 .booking-form {
                     .summary-card {
                         border: 1px solid #dcdcdc;
@@ -315,7 +308,6 @@
     .registration {
         .container {
 
-            /* 1. одна колонка на мобиле (как и хотела раньше) */
             .mc_layout {
                 grid-template-columns: 1fr;
                 gap: 20px;
@@ -328,48 +320,42 @@
             .times    { grid-area: times; }
             .details  { grid-area: details; }
 
-            /* 2. ФИКС календаря: 7 колонок по 30px + 6 промежутков по 8px = 258px */
+
             .calendar {
-                /* центрируем сам календарь */
                 justify-self: center;
 
                 .cal_head {
-                    width: 258px;              /* шапка с навигацией той же ширины */
+                    width: 258px;
                     margin: 10px auto 12px;
                 }
 
-                /* сетка дней/шапки — ровно 7*30px с gap 8px */
-                .cal-weekdays,
-                .cal-grid {
+                .cal-weekdays, .cal-grid {
                     grid-template-columns: repeat(7, 30px);
                     gap: 8px;
-                    width: 258px;              /* фикс ширина на мобиле */
-                    margin: 0 auto;            /* центрируем внутри колонки */
+                    width: 258px;
+                    margin: 0 auto;
                 }
 
-                /* кнопки дней — убираем aspect-ratio, делаем 30x30 */
                 .cal-grid {
                     button {
                         width: 30px;
                         height: 30px;
                         padding: 0;
-                        /* остальное оставляешь как есть (бордеры, ховеры и т.п.) */
                     }
                 }
             }
 
-            /* 3. Время: по умолчанию 2 колонки → если слишком узко — 1 колонка */
+
             .times {
-                container-type: inline-size;          /* включаем container query только на мобиле */
+                container-type: inline-size;
                 .times-list { grid-template-columns: 1fr 1fr; }
 
-                /* когда сама колонка .times уже узкая (<128px), слоты в один столбик */
+
                 @container (max-width: 128px) {
                     .times-list { grid-template-columns: 1fr; }
                 }
             }
 
-            /* 4. Форма — поля в одну колонку на мобиле */
             .details .booking-form .grid2 { grid-template-columns: 1fr; }
             #btn_next.btn-primary, .btn-primary { width: 100%; }
         }

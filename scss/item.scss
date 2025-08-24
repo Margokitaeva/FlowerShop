@@ -27,18 +27,16 @@
                 .left_part {
                     width: 55%;
                     .product_image {
-                        //float: left;
                         width: 100%;
-                        //margin: 0 20px 0 0;
                     }
 
                     .item_imgs {
                         height: 50px;
+                        margin-bottom: 15px;
 
                         .item_img {
                             width: 50px;
                             height: 50px;
-
                         }
                     }
                 }
@@ -56,10 +54,9 @@
                         border: 2px solid $dark_green;
                         display: flex;
                         width: 100px;
-                        //justify-content: ;
                         gap: 0;
                         margin: 5px 0 0 0;
-                        //height: 32px;
+
 
                         input {
                             width: 33%;
@@ -75,7 +72,6 @@
                         button {
                             background: white;
                             color: $text-color;
-                            //font-size: 2em;
                             padding: 7px 10px 7px 10px;
                             width: 33%;
                             height: 32px;
@@ -83,19 +79,11 @@
                             justify-content: center;
                             align-items: center;
 
-
-
                             span {
-                                //transform: ;
                                 display: inline-block;
-                                //transform: scale(3) translateY(-1px);
                                 transform-origin: center;
                                 pointer-events: none;
                             }
-                            //transform-originxxxxxxxxxxxxx: scale(3);
-
-                            //width:44px; height:44px;
-                            //font-size:26px; line-height:1;
                         }
 
                         .qty_minus span {
@@ -137,12 +125,7 @@
                                 //justify-content: space-between;
                                 .sign {
                                     margin-left: auto;
-                                    //padding-left: 3px;
                                     transform: scale(3);
-                                    //position: absolute;
-                                    //right: 0;                      // всегда у правого края
-                                    //top: 25%;
-                                    //font-size:24px; line-height:1;
                                 }
                             }
 
@@ -156,22 +139,9 @@
 
                 }
             }
-
-            p.description {
-                clear: both;
-            }
-
-
         }
-
-
     }
 }
-
-//@media only all and (max-width: 830px) {
-//    .product_info .container { width: 85%; }
-//
-//}
 
 @media only all and (max-width: 790px) {
     .container {

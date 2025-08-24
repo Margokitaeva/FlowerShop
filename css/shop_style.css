@@ -11,6 +11,7 @@
 .shop .container .subtitle:after {
   margin-top: 20px;
 }
+
 .__shop_probe__ {
   outline: 3px dashed magenta !important;
 }

@@ -29,6 +29,7 @@
 }
 .product_info .container .item_content .twoColsContent .left_part .item_imgs {
   height: 50px;
+  margin-bottom: 15px;
 }
 .product_info .container .item_content .twoColsContent .left_part .item_imgs .item_img {
   width: 50px;
@@ -102,9 +103,6 @@
 }
 .product_info .container .item_content .twoColsContent .right_part .accordions .accordion .accordion_panel p {
   font-size: 12px;
-}
-.product_info .container .item_content p.description {
-  clear: both;
 }
 
 @media only all and (max-width: 790px) {

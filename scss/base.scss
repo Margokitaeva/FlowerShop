@@ -144,7 +144,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px 25px 20px 25px;
-    overflow: hidden; // сделать потом что если экран слишком узкий то иконка меню перескакивает вниз под иконку корзины
+    overflow: hidden;
 
     .logo:hover, .bag_icon, .menu {
         cursor: pointer;
@@ -232,28 +232,12 @@ header {
                 margin: 4px;
             }
 
-            //.close {
-            //
-            //    opacity: 0;
-            //    pointer-events: none;
-            //}
-
             .hamburger {opacity: 1;}
-
-            //.close div:first-child { transform: translate(0px, 7px) rotate(45deg);}
-            //.close div:last-child  { transform:  rotate(-45deg);}
 
             &.open {
                 .hamburger {
-                    //opacity: 0;
                     pointer-events: none;
                 }
-
-                //.close {
-                //    opacity: 1;
-                //    pointer-events: auto;
-                //    z-index: 1050;
-                //}
             }
         }
     }
@@ -274,16 +258,6 @@ header {
         .textInfo {
             padding: 40px 0 0 0;
             font-size: 16px;
-        }
-
-        .address_phone {
-            //a {
-            //    text-decoration: none;
-            //}
-        }
-
-        .working_hours {
-
         }
 
         .news {
@@ -307,7 +281,6 @@ header {
                 button {
                     transition: 0.3s;
                 }
-
             }
         }
     }
@@ -414,12 +387,6 @@ header {
             opacity: 1;
             transform: translateY(0);
         }
-
-        //li:nth-child(1) .offcanvas_link {transition-delay: .1s}
-        //li:nth-child(2) .offcanvas_link {transition-delay: .2s;}
-        //li:nth-child(3) .offcanvas_link {transition-delay: .3s;}
-        //li:nth-child(4) .offcanvas_link {transition-delay: .4s;}
-        //li:nth-child(5) .offcanvas_link {transition-delay: .5s;}
 
         @for $i from 1 through 5 {
             .offcanvas_list li:nth-child(#{$i}) .offcanvas_link {

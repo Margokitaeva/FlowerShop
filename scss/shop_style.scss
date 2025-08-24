@@ -7,7 +7,7 @@
     .container {
         margin: auto;
         width: 70%;
-        //background: transparent;
+
 
         p.with_margin {
             margin: 0 0 25px 50px;
@@ -16,22 +16,11 @@
         .subtitle:after {
             margin-top: 20px;
         }
-
-        .products {
-            //width: 100%;
-            //grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            //margin: 0;
-        }
     }
 }
 
 .__shop_probe__ { outline: 3px dashed magenta !important; }
 
-//@media only all and (max-width: 1250px) {
-//    .shop .container .products {
-//        grid-template-columns: repeat(auto-fit, minmax(0px, 250px));
-//    }
-//}
 
 @media only all and (max-width: 790px) {
     .shop .container {
