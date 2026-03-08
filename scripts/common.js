@@ -10,7 +10,6 @@ export function initMenu() {
 
     function openMenu() {
         menu.classList.add('open');
-        // menu.setAttribute('aria-hidden', 'false');
         overlay.classList.add('show');
         overlay.hidden = false;
         wrapper.classList.add('menu_open');
@@ -18,10 +17,8 @@ export function initMenu() {
 
     function closeMenu() {
         menu.classList.remove('open');
-        // menu.setAttribute('aria-hidden', 'true');
         overlay.classList.remove('show');
         wrapper.classList.remove('menu_open');
-        // document.querySelector('.menu').classList.toggle('open');
         document.querySelector('.menu').classList.remove('open');
 
         setTimeout(() => overlay.hidden = true, 300);
@@ -47,7 +44,7 @@ export function initMenu() {
 
         setTimeout(() => {
             root.style.scrollBehavior = 'smooth';
-            const y = targetEl.getBoundingClientRect().top + window.pageYOffset - headerH - 8; // -8 - немного места перед элементом, чтобы не начиналось прямо с него
+            const y = targetEl.getBoundingClientRect().top + window.pageYOffset - headerH - 8; 
             window.scrollTo({top: y, behavior: 'smooth'});
 
             setTimeout(() => {
@@ -79,7 +76,7 @@ export function signForNews(eo) {
     eo.preventDefault();
     const email = document.getElementById('newsEmail').value;
     if (email) {
-        alert("Вы подписаны на рассылку!");
+        alert("You are subscribed to the newsletter!");
         eo.target.reset();
     }
 }

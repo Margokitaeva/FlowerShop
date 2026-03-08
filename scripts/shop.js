@@ -5,9 +5,6 @@ initMenu();
 
 const container = document.getElementById('products');
 const template = document.getElementById('product_template');
-// if (!container || !template) return;
-
-
 
 function renderProducts(items) {
     const container = document.getElementById('products');
@@ -55,14 +52,6 @@ function openProductPage(eo) {
 
 }
 
-// container.addEventListener('hover', changeProductImage);
-//
-// function changeProductImage(eo) {
-//     const prod = eo.target.closest('.product');
-//     const prodId = prod.getAttribute('data-id');
-//     prod.querySelector('.product_image').src = getImageList(products.find(x => String(x.id) === String(prodId)))[1];
-// }
-
 export function getImageList(p) {
     const list = [];
     if (p && p.imgs && typeof p.imgs === "object") {
@@ -85,7 +74,6 @@ container.addEventListener('mouseover', (e) => {
     const card = e.target.closest('.product');
     if (!card || !container.contains(card)) return;
 
-    // игнорируем переходы внутри одной карточки
     if (e.relatedTarget && card.contains(e.relatedTarget)) return;
 
     const id = card.getAttribute('data-id');

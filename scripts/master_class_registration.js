@@ -2,10 +2,9 @@ import {formatPrice, initMenu, signForNews} from "./common.js";
 
 initMenu();
 
-// Месяцы/дни
-const MONTHS_UI = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
-const MONTHS_RU = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
-const WEEKDAYS_RU = ['понедельник','вторник','среда','четверг','пятница','суббота','воскресенье'];
+const MONTHS_UI = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const MONTHS_RU = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const WEEKDAYS_RU = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
 
 // DOM-узлы
 const calMonthEl = document.getElementById('cal_month');
@@ -29,7 +28,6 @@ const backLink = document.getElementById('back_link') || document.querySelector(
 
 const SLOT_TEMPLATE = ["10:00","10:30","11:00","11:30","12:30","13:00","13:30","14:00","14:30","15:00"];
 
-// Состояние
 let y, m;
 let selectedDate = null;
 let selectedSlot = null;
@@ -121,7 +119,7 @@ function renderCalendar() {
 
     const daysInMonth = new Date(y, m + 1, 0).getDate();
     const first = new Date(y, m, 1);
-    const startIdx = (first.getDay() + 6) % 7; // чтобы Пн=0
+    const startIdx = (first.getDay() + 6) % 7; 
 
 
     for (let i = 0; i < startIdx; i++) {
@@ -218,10 +216,10 @@ function registerMC(eo) {
     const email = document.getElementById('f_email').value.trim();
 
     if (name && lname && email) {
-        alert("Спасибо за регистрацию, " + name + "! Вы успешно записаны на мастер-класс.");
+        alert("Thank you for registering, " + name + "! You have been successfully signed up for the master class.");
         eo.target.reset();
     } else {
-        alert("Пожалуйста, заполните обязательные поля (имя, фамилия, эл. почта).");
+        alert("Please fill in the required fields (first name, last name, email).");
     }
 
     return false;

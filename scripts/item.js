@@ -3,9 +3,6 @@ import {products} from "./data.js";
 
 initMenu();
 
-// function getParam(name) {
-//     return new URLSearchParams(location.search).get(name);
-// }
 
 const params = new URLSearchParams(window.location.search);
 const idParam = params.get("id");
@@ -14,8 +11,8 @@ const item = products.find(p => String(p.id) === String(idParam));
 
 if (!item) {
     const titleEl = document.querySelector(".sectionTitle");
-    if (titleEl) titleEl.textContent = "Товар не найден";
-    document.title = "Товар не найден";
+    if (titleEl) titleEl.textContent = "Product not found";
+    document.title = "Product not found";
 }
 else {
     hydrateItem(item);
@@ -74,7 +71,6 @@ function fillItemTexts(p) {
             descEl.innerHTML = p.description;
             descEl.hidden = false;
         } else {
-            // если описания нет — можно скрыть блок
             descEl.hidden = true;
         }
     }
@@ -85,7 +81,6 @@ function fillItemTexts(p) {
         aboutP.innerHTML = p.aboutProduct;
         if (aboutSection) aboutSection.hidden = false;
     } else if (aboutSection && !p.aboutProduct) {
-        // если нет текста — можно убрать весь аккордеон
         aboutSection.style.display = 'none';
     }
 
@@ -107,8 +102,8 @@ function setupBreadcrumbs(p, from) {
 
     const aHome = document.createElement("a");
     aHome.href = "index.html";
-    aHome.title = "На главную"
-    aHome.textContent = "Главная";
+    aHome.title = "Go to main page";
+    aHome.textContent = "Main";
     aHome.className = "textInfo";
     aHome.className += " navEl";
     fragment.appendChild(aHome);
@@ -117,8 +112,8 @@ function setupBreadcrumbs(p, from) {
         fragment.appendChild(document.createTextNode(" / "));
         const aShop = document.createElement("a");
         aShop.href = "shop.html";
-        aShop.title = "В магазин";
-        aShop.textContent = "Магазин";
+        aShop.title = "Go to shop";
+        aShop.textContent = "Shop";
         aShop.className = "textInfo";
         aShop.className += " navEl";
         fragment.appendChild(aShop);
@@ -188,14 +183,10 @@ function setupAccordions(p) {
         if (!toggle || !panel) return;
 
         toggle.addEventListener("click", () => {
-            const isHidden = panel.hidden;   // было скрыто?
-            panel.hidden = !isHidden;        // инвертируем
-            if (sign) sign.textContent = isHidden ? "-" : "+"; // меняем значок
+            const isHidden = panel.hidden;   
+            panel.hidden = !isHidden;        
+            if (sign) sign.textContent = isHidden ? "-" : "+"; 
             toggle.classList.toggle("open", !isHidden);
-            // const expanded = toggle.getAttribute("aria-expanded") === "true";
-            // toggle.setAttribute("aria-expanded", expanded ? "false" : "true");
-            // panel.hidden = expanded;
-            // if (sign) sign.textContent = expanded ? "+" : "—";
         });
     });
 }
@@ -210,10 +201,6 @@ function setupItemImgs(p) {
         item_imgs.innerHTML = "";
         return;
     }
-
-    // const images = Array.isArray(p.images) ? p.images.slice() : [];
-    // const primary = p.src || p.image;
-    // if (primary && !images.includes(primary)) images.unshift(primary);
 
     item_imgs.innerHTML = "";
 
